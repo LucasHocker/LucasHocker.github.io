@@ -1,3 +1,6 @@
 [submodule "BizOpsConfigurator/json/Dynatrace-DashboardsV4"]
 	path = BizOpsConfigurator/json/Dynatrace-DashboardsV4
 	url = https://github.com/TechShady/Dynatrace-DashboardsV4.git
+[submodule "BizOpsConfigurator/3rdparty/jsonFormatter"]
+	path = BizOpsConfigurator/3rdparty/jsonFormatter
+	url = https://github.com/MHeironimus/jsonFormatter.git
