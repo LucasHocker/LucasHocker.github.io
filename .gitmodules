@@ -4,3 +4,9 @@
 [submodule "BizOpsConfigurator/3rdparty/jsonFormatter"]
 	path = BizOpsConfigurator/3rdparty/jsonFormatter
 	url = https://github.com/MHeironimus/jsonFormatter.git
+[submodule "BizOpsConfigurator/3rdparty/d3-funnel"]
+	path = BizOpsConfigurator/3rdparty/d3-funnel
+	url = https://github.com/jakezatecky/d3-funnel.git
+[submodule "BizOpsConfigurator/3rdparty/d3"]
+	path = BizOpsConfigurator/3rdparty/d3
+	url = https://github.com/d3/d3.git
