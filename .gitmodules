@@ -10,3 +10,6 @@
 [submodule "BizOpsConfigurator/3rdparty/d3"]
 	path = BizOpsConfigurator/3rdparty/d3
 	url = https://github.com/d3/d3.git
+[submodule "BizOpsConfigurator/json/Dynatrace-DashboardV5"]
+	path = BizOpsConfigurator/json/Dynatrace-DashboardV5
+	url = https://github.com/TechShady/Dynatrace-DashboardV5
