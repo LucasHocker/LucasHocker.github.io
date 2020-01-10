@@ -13,3 +13,6 @@
 [submodule "BizOpsConfigurator/json/Dynatrace-DashboardV5"]
 	path = BizOpsConfigurator/json/Dynatrace-DashboardV5
 	url = https://github.com/TechShady/Dynatrace-DashboardV5
+[submodule "BizOpsConfigurator/3rdparty/js-untar"]
+	path = BizOpsConfigurator/3rdparty/js-untar
+	url = https://github.com/InvokIT/js-untar.git
