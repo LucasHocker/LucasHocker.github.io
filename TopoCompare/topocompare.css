@@ -1,0 +1,219 @@
+body {
+    background-color: #242424;
+    z-index: -10;
+}
+
+.popup {
+    position: fixed;
+    border: 1px solid black;
+    width: auto;
+    right: 50px;
+    top: 20px;
+    background-color: rgba(215, 219, 221,0.8);
+    border-radius: 4px;
+    color: white;
+    word-wrap: normal;
+    z-index: -1;
+    height: 90%;
+}
+
+.popup.front {
+    z-index: 30;
+}
+
+.popupwrapper {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+
+div.taglist, div.mzlist {
+    position: absolute;
+    z-index: 20;
+    background-color: white;
+    opacity: 1;
+    transition: 0.5s linear all;
+    margin-left: 7px;
+}
+
+div.taglist ul, div.mzlist ul {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.tooltip {
+    opacity: 1;
+    transition: 1s linear all;
+}
+
+.tooltip.ng-hide {
+    opacity: 0;
+}
+
+.plus {
+    z-index: 10;
+}
+
+div {
+    box-sizing: border-box;
+}
+    div.loadbar {
+        width: 100%;
+        background-color: rgba(215, 219, 221,0.8);
+        clear: both;
+        overflow: auto;
+        z-index: -5;
+    }
+
+div.loadbar div {
+    margin: auto;
+    padding-left: 5%;
+    float: left;
+}
+
+div.loadbutton{
+    vertical-align:middle;
+}
+
+div.selectorbar {
+    width: 100%;
+    background-color: rgba(215, 219, 221,0.8);
+    clear: both;
+    overflow: auto;
+    z-index: -5;
+}
+
+div.selectorbar div {
+    text-align: center;
+}
+
+div.left, div.right {
+    width: 33%;
+    float: left;
+    border: 1px black solid;
+}
+
+
+
+div.center {
+    width: 34%;
+    float: left;
+    border: 1px black solid;
+}
+
+div.plus {
+    cursor: pointer;
+}
+
+div.all, div.left, div.both, div.right {
+        width: 25%;
+        float: left;
+        border: 1px black solid;
+    }
+
+    div.all {
+        background-color: rgba(215, 219, 221,0.8);
+    }
+
+    div.left {
+        background-color: rgba(93, 173, 226,0.8);
+    }
+
+    div.right {
+        background-color: rgba(231, 76, 60,0.8);
+    }
+
+    div.both {
+        background-color: rgba(142, 68, 173,0.8 );
+    }
+
+ul li ul li {
+    font-size: 80%;
+}
+
+table.pane {
+
+}
+
+table.pane td.left {
+    width: 200px;
+    #word-wrap:break-word;
+}
+
+table.pane td.right {
+    width: 20px;
+}
+
+span.time {
+    background-color: #525252;
+    border: 1px solid black;
+    min-width: 135px;
+    color: #f8f8f8;
+    display: inline-block;
+}
+span.time:hover {
+    background-color: #888888;
+}
+
+div.timebox {
+    background-color: #525252;
+    opacity: 1;
+    z-index: 20;
+    overflow: auto;
+}
+
+div.timebox div {
+    max-width: 140px;
+    float: left;
+    text-align: center;
+}
+
+div.timebox .time {
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: white;
+    min-width: 135px;
+    color: #f8f8f8;
+    margin: 2px;
+    display: inline-block;
+}
+
+div.timebox .time:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+div.closer {
+    font-size: 80%;
+    border: 1px black solid;
+    float: right;
+    margin: 10px;
+    padding: 3px;
+    cursor: pointer;
+    color: black;
+}
+
+.small {
+    font-size: smaller;
+}
+
+.question {
+    font-size: smaller;
+    border: 1px white solid;
+    border-radius: 3px;
+    color: white;
+}
+
+div.form {
+    min-width: 25%;
+}
+
+div.form table, div.form table input {
+    width: 100%;
+}
+
+div.selectorbar input {
+    min-width: 50%;
+}

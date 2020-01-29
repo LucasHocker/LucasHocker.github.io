@@ -1,0 +1,27 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D63E0A8-677B-46CD-A3E4-86DAD94AE9DD}"
+	ProjectSection(SolutionItems) = preProject
+		topocompare.css = topocompare.css
+		host.tooltip.html = host.tooltip.html
+		topocompare.js = topocompare.js
+		application.list.html = application.list.html
+		application.tooltip.html = application.tooltip.html
+		host.list.html = host.list.html
+		index.html = index.html
+		processgroup.list.html = processgroup.list.html
+		processgroup.tooltip.html = processgroup.tooltip.html
+		service.list.html = service.list.html
+		service.tooltip.html = service.tooltip.html
+		selector.tag.html = selector.tag.html
+		selector.time.html = selector.time.html
+		selector.mgmtzone.html = selector.mgmtzone.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+EndGlobal

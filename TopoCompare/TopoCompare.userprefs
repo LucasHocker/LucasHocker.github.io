@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="application.list.html">
+    <Files>
+      <File FileName="topocompare.css" Line="32" Column="17" />
+      <File FileName="topocompare.js" Line="33" Column="41" />
+      <File FileName="selector.tag.html" Line="22" Column="7" />
+      <File FileName="selector.time.html" Line="29" Column="26" />
+      <File FileName="index.html" Line="77" Column="22" />
+      <File FileName="host.list.html" Line="20" Column="84" />
+      <File FileName="processgroup.list.html" Line="47" Column="90" />
+      <File FileName="service.list.html" Line="31" Column="83" />
+      <File FileName="application.list.html" Line="19" Column="87" />
+      <File FileName="selector.mgmtzone.html" Line="22" Column="7" />
+      <File FileName="host.tooltip.html" Line="47" Column="128" />
+      <File FileName="processgroup.tooltip.html" Line="28" Column="22" />
+      <File FileName="application.tooltip.html" Line="29" Column="18" />
+      <File FileName="service.tooltip.html" Line="37" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

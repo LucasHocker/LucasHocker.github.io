@@ -1,0 +1,60 @@
+<div ng-show="tooltip || popup">
+    <div class="{{popup?'popup front':'popup'}}">
+        <div class="popupwrapper">
+            <div class="closer" ng-click="$parent.popup=false">x</div>
+            <ul>
+                <li>{{host.entityId}}</li>
+                <li>
+                    FirstSeen: {{host.firstSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                    <span class="small">({{host.firstSeenTimestamp}})</span>
+                </li>
+                <li>
+                    LastSeen: {{host.lastSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                    <span class="small">({{host.lastSeenTimestamp}})</span>
+                </li>
+                <li>OS: {{host.osVersion}}</li>
+                <li>
+                    Tags:
+                    <ul>
+                        <li ng-repeat="tag in host.tags">
+                            [{{tag.context}}] {{tag.key}} -> {{tag.value}}
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    MZs:
+                    <ul>
+                        <li ng-repeat="mz in host.managementZones">
+                            {{mz.name}}
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    IPs:
+                    <ul>
+                        <li ng-repeat="ip in host.ipAddresses">{{ip}}</li>
+                    </ul>
+                </li>
+                <li>
+                    Other info:
+                    <ul>
+                        <li ng-repeat="(key, val) in host | filterProperties">{{key}}: {{val}}</li>
+                    </ul>
+                </li>
+                <li>
+                    To Relationships:
+                    <ul>
+                        <li ng-repeat="rel in host.toRelationships.isNetworkClientOfHost |filter:'HOST'">{{$root.entLookup[rel] || '['+rel+']'}}</li>
+                    </ul>
+                </li>
+                <li>
+                    From Relationships:
+                    <ul>
+                        <li ng-repeat="rel in host.fromRelationships.isNetworkClientOfHost |filter:'HOST'">{{$root.entLookup[rel] || '['+rel+']'}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

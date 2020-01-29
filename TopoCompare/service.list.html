@@ -1,0 +1,56 @@
+﻿<div ng-transclude>
+    <div ng-switch="panename">
+        <div ng-switch-when="all">
+            <table class="pane">
+                <tr ng-repeat="service in $root.jsondata">
+                    <td class="right"><div class="plus" ng-click="popup = !popup"  ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                        {{popup?'-':'+'}}
+                    </div></td>
+                    <td class="left">
+                        {{service.displayName}}
+                        <div ng-include="'service.tooltip.html'"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div ng-switch-when="left">
+            <table>
+                <tr ng-repeat="service in $root.jsondata | filter:$root.leftFilter">
+                    <td class="right"><div class="plus" ng-click="popup = !popup"  ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                        {{popup?'-':'+'}}
+                    </div></td>
+                    <td class="left">
+                        {{service.displayName}}
+                        <div ng-include="'service.tooltip.html'"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div ng-switch-when="both">
+            <table>
+                <tr ng-repeat="service in $root.jsondata | filter:$root.leftFilter | filter:$root.rightFilter">
+                    <td class="right"><div class="plus" ng-click="popup = !popup"  ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                        {{popup?'-':'+'}}
+                    </div></td>
+                    <td class="left">
+                        {{service.displayName}}
+                        <div ng-include="'service.tooltip.html'"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div ng-switch-when="right">
+            <table>
+                <tr ng-repeat="service in $root.jsondata | filter:$root.rightFilter">
+                    <td class="right"><div class="plus" ng-click="popup = !popup"  ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                        {{popup?'-':'+'}}
+                    </div></td>
+                    <td class="left">
+                        {{service.displayName}}
+                        <div ng-include="'service.tooltip.html'"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

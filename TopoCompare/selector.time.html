@@ -1,0 +1,32 @@
+﻿<div class="all">All</div>
+<div class="left">
+    LeftTime: <span class="time" ng-click="leftTimeBox = !leftTimeBox">{{$root.leftTime.label}}</span>
+    <div class="timebox" ng-show="leftTimeBox">
+        <div class="timebox-left">
+            <a class="time" ng-repeat="time in times | filter:{grp:'L'}" 
+            ng-click="$parent.leftTimeBox = !$parent.leftTimeBox; $root.leftTime=time">{{time.label}}</a>
+        </div>
+        <div class="timebox-right">
+            <a class="time" ng-repeat="time in times | filter:{grp:'R'}" 
+            ng-click="$parent.leftTimeBox = !$parent.leftTimeBox; $root.leftTime=time" leftTimeBox = !leftTimeBox>{{time.label}}</a>
+        </div>
+        <span class="question" ng-mouseover="questionL=true" ng-mouseleave="questionL=false">?</span>
+        <div class="small" ng-show="questionL">Determined by selected time being >= firstSeenTimestamp and <= lastSeenTimestamp</div>
+    </div>
+
+</div>
+<div class="both">{{$root.depends.name}}</div>
+<div class="right">
+    RightTime: <span class="time" ng-click="rightTimeBox = !rightTimeBox">{{$root.rightTime.label}}</span>
+    <div class="timebox" ng-show="rightTimeBox">
+        <div class="timebox-left">
+            <a class="time" ng-repeat="time in times | filter:{grp:'L'}" ng-click="$parent.rightTimeBox = !$parent.rightTimeBox; $root.rightTime=time">{{time.label}}</a>
+        </div>
+        <div class="timebox-right">
+            <a class="time" ng-repeat="time in times | filter:{grp:'R'}" ng-click="$parent.rightTimeBox = !$parent.rightTimeBox; $root.rightTime=time">{{time.label}}</a>
+        </div>
+        <span class="question" ng-mouseover="questionR=true" ng-mouseleave="questionR=false">?</span>
+        <div class="small" ng-show="questionR">Determined by selected time being >= firstSeenTimestamp and <= lastSeenTimestamp</div>
+    </div>
+
+</div>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html ng-app="tc">
+    <head>
+        <meta charset="utf-8" />
+        <title>Topology Compare</title>
+        <link rel="stylesheet" type="text/css" href="topocompare.css" />
+    </head>
+    <body ng-controller="connectCtrl">
+        <div class="loadbar">
+            <div class="form">
+                    <table>
+                        <tr>
+                            <td>URL:</td>
+                            <td><input name="url" ng-model="url"/></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Token:</td>
+                            <td><input name="token" ng-model="token" value=""/></td>
+                            <td></td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="endpoint">
+                <label>
+                    Layer:<br />
+                    <select ng-model="sslayer" ng-options="layer.name for layer in sslayers"></select>
+                </label>
+            </div>
+            <div class="loadbutton">
+                <br />
+                <input type="submit" value="Load" ng-click="callApi()" />
+            </div>
+            <div class="compare">
+                <label>
+                    Compare by:<br />
+                    <select ng-model="$root.compareby" ng-options="compare.name for compare in compares"></select>
+                </label>
+            </div>
+            <div class="depends">
+                <label>
+                    Show:<br />
+                    <select ng-model="$root.depends" ng-options="dep.name for dep in deps"></select>
+                </label>
+            </div>
+        </div>
+        <div class="selectorbar" ng-show="loaded" ng-switch on="$root.compareby.name">
+            <div ng-switch-when="Tag"><ng-include src="'selector.tag.html'"></ng-include></div>
+            <div ng-switch-when="Time"><ng-include src="'selector.time.html'"></ng-include></div>
+            <div ng-switch-when="MgmtZone"><ng-include src="'selector.mgmtzone.html'"></></div>
+            <div ng-switch-default>$root.compareby:{{$root.compareby}}<br />$root.compareby.name:{{$root.compareby.name}}</div>
+        </div>
+
+        <div class="datapane">
+                <div ng-repeat="pane in panes">
+                <div class="{{pane.class}}" ng-switch on="sslayer.name">
+                    <div ng-switch-when="Application">
+                        <mypane panename="{{pane.class}}" paneurl="application.list.html"></mypane>
+                    </div>
+                    <div ng-switch-when="Service">
+                        <mypane panename="{{pane.class}}" paneurl="service.list.html"></mypane>
+                    </div>
+                    <div ng-switch-when="ProcessGroup">
+                        <mypane panename="{{pane.class}}" paneurl="processgroup.list.html"></mypane>
+                    </div>
+                    <div ng-switch-when="Host">
+                        <mypane panename="{{pane.class}}" paneurl="host.list.html"></mypane>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="angular.min.js" type="text/javascript"></script>
+        <script src="angular-route.min.js" type="text/javascript"></script>
+        <script src="angular-animate.min.js" type="text/javascript"></script>
+        <script src="topocompare.js" type="text/javascript"></script>
+    </body>
+</html>

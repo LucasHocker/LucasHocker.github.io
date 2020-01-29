@@ -1,0 +1,38 @@
+﻿<div ng-show="tooltip">
+    <div class="popup">
+        <div class="closer" ng-click="$parent.popup=false">x</div>
+        <ul>
+            <li>{{application.entityId}}</li>
+            <li>
+                FirstSeen: {{application.firstSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                <span class="small">({{application.firstSeenTimestamp}})</span>
+            </li>
+            <li>
+                LastSeen: {{application.lastSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                <span class="small">({{application.lastSeenTimestamp}})</span>
+            </li>
+            <li>
+                Tags:
+                <ul>
+                    <li ng-repeat="tag in application.tags">
+                        [{{tag.context}}] {{tag.key}} -> {{tag.value}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                MZs:
+                <ul>
+                    <li ng-repeat="mz in application.managementZones">
+                        {{mz.name}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Other info:
+                <ul>
+                    <li ng-repeat="(key, val) in application | filterProperties">{{key}}: {{val}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

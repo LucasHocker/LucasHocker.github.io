@@ -1,0 +1,22 @@
+﻿<div class="all">All</div>
+<div class="left">
+    <label>LeftTag: <input ng-model="$root.leftTag" ng-focus="leftTagBox=true" ng-blur="leftTagBox=false" /></label>
+    <div class="taglist" ng-show="leftTagBox">
+        <ul>
+            <li ng-repeat="tag in $root.arrFromTags | orderBy:'tag'">
+                <a ng-click="updateLeftTag(tag.tag)">{{tag.tag}} ({{tag.count}}) </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="both">{{$root.depends.name}}</div>
+<div class="right">
+    <label>RightTag: <input ng-model="$root.rightTag" ng-focus="rightTagBox=true" ng-blur="rightTagBox=false" /></label>
+    <div class="taglist" ng-show="rightTagBox">
+        <ul>
+            <li ng-repeat="tag in $root.arrFromTags | orderBy:'tag'">
+                <a ng-click="updateRightTag(tag.tag)">{{tag.tag}} ({{tag.count}}) </a>
+            </li>
+        </ul>
+    </div>
+</div>

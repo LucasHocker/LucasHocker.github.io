@@ -1,0 +1,46 @@
+﻿<div ng-show="tooltip">
+    <div class="popup">
+        <div class="closer" ng-click="$parent.popup=false">x</div>
+        <ul>
+            <li>{{service.entityId}}</li>
+            <li>
+                FirstSeen: {{service.firstSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                <span class="small">({{service.firstSeenTimestamp}})</span>
+            </li>
+            <li>
+                LastSeen: {{service.lastSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                <span class="small">({{service.lastSeenTimestamp}})</span>
+            </li>
+            <li>
+                Software Technologies:
+                <ul>
+                    <li ng-repeat="tech in service.softwareTechnologies">
+                        {{tech.type}}({{tech.edition}})-{{tech.version}}
+                    </li>
+                </ul>
+            </li> 
+            <li>
+                Tags:
+                <ul >
+                    <li ng-repeat="tag in service.tags">
+                        [{{tag.context}}] {{tag.key}} -> {{tag.value}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                MZs:
+                <ul>
+                    <li ng-repeat="mz in service.managementZones">
+                        {{mz.name}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Other info:
+                <ul>
+                    <li ng-repeat="(key, val) in service | filterProperties">{{key}}: {{val}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

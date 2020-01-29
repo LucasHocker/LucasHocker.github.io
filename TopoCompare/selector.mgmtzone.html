@@ -1,0 +1,22 @@
+<div class="all">All</div>
+<div class="left">
+    <label>LeftMZ: <input ng-model="$root.leftMZ" ng-focus="leftMZBox=true" ng-blur="leftMZBox=false" /></label>
+    <div class="mzlist" ng-show="leftMZBox">
+        <ul>
+            <li ng-repeat="mz in $root.arrFromMZs | orderBy:'mz'">
+                <a ng-click="updateLeftMZ(mz.name)">{{mz.name}} ({{mz.count}}) </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="both">{{$root.depends.name}}</div>
+<div class="right">
+    <label>RightMZ: <input ng-model="$root.rightMZ" ng-focus="rightMZBox=true" ng-blur="rightMZBox=false" /></label>
+    <div class="mzlist" ng-show="rightMZBox">
+        <ul>
+            <li ng-repeat="mz in $root.arrFromMZs | orderBy:'mz'">
+                <a ng-click="updateRightMZ(mz.name)">{{mz.name}} ({{mz.count}}) </a>
+            </li>
+        </ul>
+    </div>
+</div>

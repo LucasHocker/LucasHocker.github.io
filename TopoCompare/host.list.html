@@ -1,0 +1,77 @@
+<div ng-transclude>
+    
+        <div ng-switch="panename">
+            <div ng-switch-when="all">
+                <table class="pane">
+                    <tr ng-repeat="host in $root.jsondata">
+                        <td class="right"><div class="plus" ng-click="popup = !popup" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                            {{popup?'-':'+'}}
+                        </div></td>
+                        <td class="left">
+                            {{host.displayName}}
+                            <div ng-include="'host.tooltip.html'"></div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div ng-switch-when="left">
+                <table>
+                    <tr ng-repeat="host in $root.jsondata | filter:$root.leftFilter">
+                        <td class="right"><div class="plus" ng-click="popup = !popup" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                            {{popup?'-':'+'}}
+                        </div></td>
+                        <td class="left">
+                            {{host.displayName}}
+                            <div ng-include="'host.tooltip.html'"></div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div ng-switch-when="both">
+                <table ng-if="$root.depends.name=='Overlaps'">
+                    <tr ng-repeat="host in $root.jsondata | filter:$root.leftFilter | filter:$root.rightFilter">
+                        <td class="right"><div class="plus" ng-click="popup = !popup" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                            {{popup?'-':'+'}}
+                        </div></td>
+                        <td class="left">
+                            {{host.displayName}}
+                            <div ng-include="'host.tooltip.html'"></div>
+                        </td>
+
+                    </tr>
+                </table>
+                <div ng-if="$root.depends.name=='Dependencies'">
+                    <table ng-repeat="host in $root.jsondata | filterDependencies">
+                        <tr>
+                            <td class="right">
+                                <div class="plus" ng-click="popup = !popup" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                                    {{popup?'-':'+'}}
+                                </div>
+                            </td>
+                            <td class="left">
+                                {{host.displayName}} -> {{dependency.displayName}}
+                                <div ng-include="'host.tooltip.html'"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-switch-when="right">
+                <table>
+                    <tr ng-repeat="host in $root.jsondata | filter:$root.rightFilter">
+                        <td class="right"><div class="plus" ng-click="popup = !popup" ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false">
+                              {{popup?'-':'+'}}
+                        </div></td>
+                        <td class="left">
+                            {{host.displayName}}
+                            <div ng-include="'host.tooltip.html'"></div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+</div>

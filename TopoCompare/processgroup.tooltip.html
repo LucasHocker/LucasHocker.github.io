@@ -1,0 +1,44 @@
+﻿<div ng-show="tooltip">
+    <div class="popup">
+        <div class="closer" ng-click="$parent.popup=false">x</div>
+        <ul>
+            <li>{{processgroup.entityId}}</li>
+            <li>
+                FirstSeen: {{processgroup.firstSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                <span class="small">({{processgroup.firstSeenTimestamp}})</span>
+            </li>
+            <li>
+                LastSeen: {{processgroup.lastSeenTimestamp | date:'yyyy-MM-dd HH:mm:ss Z'}}<br />
+                <span class="small">({{processgroup.lastSeenTimestamp}})</span>
+            </li>
+            <li>
+                Tags:
+                <ul ng-repeat="tag in processgroup.tags">
+                    <li>
+                        [{{tag.context}}] {{tag.key}} -> {{tag.value}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                MZs:
+                <ul>
+                    <li ng-repeat="mz in processgroup.managementZones">
+                        {{mz.name}}
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Ports:
+                <ul ng-repeat="port in processgroup.ports">
+                    <li>{{port}}</li>
+                </ul>
+            </li>
+            <li>
+                Other info:
+                <ul>
+                    <li ng-repeat="(key, val) in processgroup | filterProperties">{{key}}: {{val}}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
