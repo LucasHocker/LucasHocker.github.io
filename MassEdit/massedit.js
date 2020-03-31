@@ -20,7 +20,7 @@ function disableAll(){
     let res = dtAPIquery(query);
     $.when(res).done(function(data){
         let options = {
-            "methdod": "POST",
+            "method": "POST",
             "data": disableJSON
         };
         let numHosts = data.length;
