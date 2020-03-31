@@ -26,7 +26,7 @@ function disableAll(){
         let numHosts = data.length;
         if(confirm(`Disable ${numHosts} hosts?`)){
             data.forEach(function(host){
-                query = `${url}/api/config/v1/hosts/${host.entityId}/monitoring`;
+                query = `/api/config/v1/hosts/${host.entityId}/monitoring`;
                 dtAPIquery(query,options);
             });
         }
