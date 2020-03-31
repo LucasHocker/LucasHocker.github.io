@@ -15,7 +15,7 @@ function disableAll(){
     url = $("#url").val();
     token = $("#token").val();
     let hostGroup = $("#hostGroup").val();
-    let query = `${url}/api/v1/entity/infrastructure/hosts?hostGroupName=${hostGroup}&includeDetails=false`;
+    let query = `/api/v1/entity/infrastructure/hosts?hostGroupName=${hostGroup}&includeDetails=false`;
 
     let res = dtAPIquery(query);
     $.when(res).done(function(data){
