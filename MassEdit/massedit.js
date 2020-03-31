@@ -39,7 +39,7 @@ function dtAPIquery(query, options={}, retries=3) {
     } );
     let method = (options.hasOwnProperty('method') ? options.method : "GET" );
     let data = (options.hasOwnProperty('data') ? options.data : {} );
-    let error = (options.hasOwnProperty('error') ? options.error : errorboxJQXHR);
+    let error = (options.hasOwnProperty('error') ? options.error : console.log);
 
     //Get App list from API as JSON
     return $.ajax({
