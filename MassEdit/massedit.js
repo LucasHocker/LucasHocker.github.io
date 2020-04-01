@@ -1,5 +1,6 @@
 var url = "";
 var token = "";
+var dryrun = false;
 const disableJSON = JSON.stringify({
     "description": "Turn it off",
     "monitoringEnabled": false,
@@ -8,8 +9,18 @@ const disableJSON = JSON.stringify({
 
 $(document).ready(function(){
     $("#disableAll").on("click", "", disableAll);
-
+    $("#dryrun").on("change","",dryRun);
 });
+
+function dryRun(){
+    if( $("#dryrun").prop("checked") == true ){
+        dryrun = true;
+        $("#disableAll").val("Dry Run");
+    } else if( $("#dryrun").prop("checked") == false ){
+        dryrun = false;
+        $("#disableAll").val("Disable All");
+    }
+}
 
 function disableAll(){
     url = $("#url").val();
@@ -17,7 +28,9 @@ function disableAll(){
         url = url.substring(0,url.length-1);
     token = $("#token").val();
     let hostGroup = $("#hostGroup").val();
-    let query = `/api/v1/entity/infrastructure/hosts?hostGroupName=${hostGroup}&includeDetails=false`;
+    let query = `/api/v1/entity/infrastructure/hosts?includeDetails=false`;
+    if(hostGroup != "")
+        query += `&hostGroupName=${hostGroup}`;
 
     let res = dtAPIquery(query);
     $.when(res).done(function(data){
@@ -26,7 +39,15 @@ function disableAll(){
             "data": disableJSON
         };
         let numHosts = data.length;
-        if(confirm(`Disable ${numHosts} hosts?`)){
+
+        let hostlist = [];
+        data.forEach(function(host){
+            hostlist.push(`<li>${host.displayName} (${host.entityId})</li>`);
+        });
+        $("#hostlist").html(`<ul>${hostlist.join("\n")}</ul>`);
+
+
+        if(!dryrun && confirm(`Disable ${numHosts} hosts?`)){
             data.forEach(function(host){
                 query = `/api/config/v1/hosts/${host.entityId}/monitoring`;
                 dtAPIquery(query,options);
