@@ -13,6 +13,8 @@ $(document).ready(function(){
 
 function disableAll(){
     url = $("#url").val();
+    if(url.length>1 && url.charAt(url.length-1)=="/")
+        url = url.substring(0,url.length-1);
     token = $("#token").val();
     let hostGroup = $("#hostGroup").val();
     let query = `/api/v1/entity/infrastructure/hosts?hostGroupName=${hostGroup}&includeDetails=false`;
