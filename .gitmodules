@@ -16,3 +16,6 @@
 [submodule "BizOpsConfigurator/3rdparty/js-untar"]
 	path = BizOpsConfigurator/3rdparty/js-untar
 	url = https://github.com/InvokIT/js-untar.git
+[submodule "BizOpsConfigurator/3rdparty/sheetJS"]
+	path = BizOpsConfigurator/3rdparty/sheetJS
+	url = https://github.com/SheetJS/sheetjs.git
