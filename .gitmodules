@@ -19,3 +19,6 @@
 [submodule "BizOpsConfigurator/3rdparty/sheetJS"]
 	path = BizOpsConfigurator/3rdparty/sheetJS
 	url = https://github.com/SheetJS/sheetjs.git
+[submodule "BizOpsConfigurator/3rdparty/showdown"]
+	path = BizOpsConfigurator/3rdparty/showdown
+	url = https://github.com/showdownjs/showdown.git
