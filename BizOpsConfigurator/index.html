@@ -1,93 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <script type="text/javascript" src="https://js-cdn.dynatracelabs.com/jstag/145e049b9b1/bf49960xxn/b94c132cf8396fed_complete.js" crossorigin="anonymous"></script>
-  <title>BizOpsConfigurator</title>
-  <link id='css' rel="stylesheet" type="text/css" href="css/dttheme.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
+    <meta http-equiv="Refresh" content="10;URL=https://dynatrace.github.com/BizOpsConfigurator">
+    <meta charset="UTF-8">
+    <title>PLEASE NOTE NEW ADDRESS</title>
+    <meta name="description" content="The Configurator has moved to a new address. Please note the change of address." >
+ 
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+ 
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+ 
+    <style>
+ 
+        body{
+            font-family: 'Noto Sans', Arial, serif;
+            font-weight: 400;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height: 1.618em;
+            background: #464646 url('background.jpg') center center no-repeat fixed;
+            background-size: cover;
+        }
+        h2{
+            font-family: 'Noto Sans', Arial, serif;
+            font-weight: 700;
+            font-size:40px;
+            line-height: 1.618em;
+        }
+        section{
+            max-width:800px;
+            margin:8% auto 1em auto;
+            background-color:#222;
+            opacity: 0.8;
+            filter: alpha(opacity=80); /* For IE8 and earlier */
+            color:#fff;
+            padding:1em 5%;
+        }
+ 
+        a{
+            color: #FBEF50;
+	    text-decoration: none;
+        }
+        a:hover{
+            outline:none;
+            outline-offset:inherit;
+	    text-decoration: underline;
+        }
+        @media (max-device-width: 1027px) {
+ 
+            body{
+                text-align:center;
+                font-size:larger;
+            }
+            section{
+                max-width: 90%;
+            }
+ 
+        }
+ 
+        @media (max-device-width: 640px) {
+            section{
+                max-width: 97%;
+            }
+ 
+        }
+ 
+ 
+    </style>
 </head>
 <body>
-<div id='everything'>
-  <div id='lhs'>
-    <div id='lhsv'>
-      <div id="menubar">
-        <div id='logorow'>
-            <a href="#home" id="logo">&nbsp;&nbsp;&nbsp; BizOps Configurator</a>
-            <a id='arrow'>
-                <svg fill="#454646" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path d="M414.3 229.2h-221l120.9-121.1-41.7-41.8L97.7 241.6v29.5l174.8 175.3 41.7-41.8L196 286.2h218.3z"></path></svg>
-            </a>
-        </div>
-        <a href="#prerequisites" id="prerequisites">Prerequisites</a>
-        <a href="#begin" id="begin">Begin</a>
-        <a href="#overview" id="overview">Overview</a>
-        <a href="#faq" id="faq">FAQ</a>
-        <a href="#devguide" id="devguide">Developer Guide</a>
-        <a href="#miscTools" id="miscTools">Misc Tools</a>
-        <!--<a href="#forecast" id="forecast">Forecast Test</a>-->
-        <!--<a href="#v5test" id="v5test">V5 Test </a>-->
-        <!--<a href="#githubtest" id="githubtest">GitHub Test </a>-->
-        <!--<a href="#funneltest" id="funneltest">Funnel Test</a>-->
-        <!--<a href="uitest.html" id="uitest">UI Test</a>-->
-      </div>
-    </div>
-  </div>
-  <div id='rhs'>
-    <div id='rhsv'>
-      <div id="searchbar">
-      <div id='searchbarh'>
-        <div id='hamburger'>
-            <a><svg fill="#454646" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path d="M100 120h312a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4H100a4 4 0 0 1-4-4v-40a4 4 0 0 1 4-4zm0 224h312a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4H100a4 4 0 0 1-4-4v-40a4 4 0 0 1 4-4zm0-112h312a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4H100a4 4 0 0 1-4-4v-40a4 4 0 0 1 4-4z"></path></svg></a>
-        </div>
-        <div id='dbbutton'><a>
-          <svg fill="#454646" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 512 512"><path d="M464 64H48a8 8 0 0 0-8 8v300a8 8 0 0 0 8 8h160v44h-36c-6.627 0-12 5.373-12 12v12h192v-12c0-6.627-5.373-12-12-12h-36v-44h160a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zm-24 276H72V96h368v244z"></path><path d="M112 236h80v64h-80zm104 0h80v64h-80zm104-100h80v68h-80zm0 100h80v64h-80zM112 136h184v68H112z"></path></svg>
-        </a></div>
-        <div id='hspacer'> </div>
-        <div id='gear'><a href='#config' id='config'><img src='images/services-white.svg' class='icon'>
-        </a></div>
-      </div>
-      </div>
-      <div id="errorBox"></div>
-      <div id="bcwrapper"></div>
-      <div id="viewport"></div>
-      <div id="repo_config"></div>
-      <div id="dashboard_list"></div>
-
-    </div>
-  </div>
-</div>
-<div id="teaser"></div>
-<div id="loaderwrapper">
-  <div id="loaderA"></div>
-  <div id="loaderB"></div>
-  <div id="loading">Loading data...</div>
-</div>
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--<script src="https://code.jquery.com/jquery-migrate-3.1.0.js"></script>-->
-  <script src="js/globals.js"></script>
-  <script src="js/dtAPI.js"></script>
-  <script src="js/dashboard.js"></script>
-  <script src="js/linkTiles.js"></script>
-  <script src="js/swaps.js"></script>
-  <script src="js/githubAPI.js"></script>
-  <script src="js/forecast.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/fieldsetPainter.js"></script>
-  <script src="js/globalButtonHandler.js"></script>
-  <script src="js/inputChangeHandlers.js"></script>
-  <script src="js/linkHandler.js"></script>
-  <script src="js/workflowBuilder.js"></script>
-  <script src="js/miscTools/massedit.js"></script>
-  <script src="https://d3js.org/d3.v5.js"></script>
-  <script src="3rdparty/d3-funnel/dist/d3-funnel.js"></script>
-  <script src="3rdparty/sheetJS/dist/xlsx.mini.min.js"></script>
-  <script src="3rdparty/showdown/dist/showdown.min.js"></script>
+ 
+<section>
+    <h2>The Configurator has moved!</h2>
+ 
+    <h3>The new web address is <a href="https://dynatrace.github.com/BizOpsConfigurator">https://dynatrace.github.com/BizOpsConfigurator</a></h3>
+    <h3>...You will be transferred to the new site in a moment...</h3>
+ 
+    <p>If you have waited more than a few seconds and you are still seeing this message, please click on the link above! Thank you.</p>
+</section>
+ 
 </body>
 </html>
